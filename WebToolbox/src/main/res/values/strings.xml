@@ -9,5 +9,8 @@
     <string name="error_getting_play_url">Error getting playUrl, try again later</string>
     <string name="title_activity_play_hd">Play HD</string>
     <string name="title_activity_play">Play</string>
+    <string name="error_getting_download_urls">Error getting downloadUrls, try again later</string>
+    <string name="title_activity_download_hd">Download HD</string>
+    <string name="title_activity_download">Download</string>
 
 </resources>
