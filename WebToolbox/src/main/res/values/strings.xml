@@ -6,5 +6,8 @@
     <string name="title_section1">Section 1</string>
     <string name="title_section2">Section 2</string>
     <string name="title_section3">Section 3</string>
+    <string name="error_getting_play_url">Error getting playUrl, try again later</string>
+    <string name="title_activity_play_hd">Play HD</string>
+    <string name="title_activity_play">Play</string>
 
 </resources>

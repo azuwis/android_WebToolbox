@@ -22,6 +22,32 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="azuwis.webtoolbox.YoukuHdPlayActivity"
+            android:label="@string/title_activity_play_hd" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:host="v.youku.com"
+                    android:pathPrefix="/v_show/id_"
+                    android:scheme="http" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="azuwis.webtoolbox.YoukuMp4PlayActivity"
+            android:label="@string/title_activity_play" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:host="v.youku.com"
+                    android:pathPrefix="/v_show/id_"
+                    android:scheme="http" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
