@@ -19,6 +19,8 @@ public abstract class BasePlayActivity extends Activity {
             Intent intent = new Intent(Intent.ACTION_VIEW);
             // trick to bring up built-in player(Gallery)
             intent.setDataAndType(Uri.parse(playUrl), "video/*");
+            // start as new task, ease switching back to browser
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
         } else {
             Toast toast = Toast.makeText(this, R.string.error_getting_play_url, Toast.LENGTH_SHORT);
