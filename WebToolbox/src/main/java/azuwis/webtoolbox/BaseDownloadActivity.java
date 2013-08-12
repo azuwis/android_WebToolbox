@@ -54,8 +54,8 @@ public abstract class BaseDownloadActivity extends Activity {
                 for (int i = 1; i < downloadInfo.size(); i++) {
                     DownloadManager.Request request = new DownloadManager.Request(Uri.parse(downloadInfo.get(i)));
                     request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI);
-                    request.setDestinationInExternalPublicDir(path, i + ".mp4");
-                    request.setTitle(String.format("%s #%s", downloadInfo.get(0), i));
+                    request.setDestinationInExternalPublicDir(path, String.format("%03d.mp4", i));
+                    request.setTitle(String.format("%s #%03d", downloadInfo.get(0), i));
                     downloadManager.enqueue(request);
                 }
             } else {
