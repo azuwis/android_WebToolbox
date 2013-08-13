@@ -19,6 +19,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import azuwis.webtoolbox.fragments.AboutFragment;
+
 public class MainActivity extends FragmentActivity implements ActionBar.TabListener {
 
     /**
@@ -113,6 +115,15 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
             // getItem is called to instantiate the fragment for the given page.
             // Return a DummySectionFragment (defined as a static inner class
             // below) with the page number as its lone argument.
+            switch (position) {
+                case 0:
+                    break;
+                case 1:
+                    Fragment aboutFragment = new AboutFragment();
+                    return aboutFragment;
+                case 2:
+                    break;
+            }
             Fragment fragment = new DummySectionFragment();
             Bundle args = new Bundle();
             args.putInt(DummySectionFragment.ARG_SECTION_NUMBER, position + 1);
@@ -133,7 +144,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
                 case 0:
                     return getString(R.string.title_section1).toUpperCase(l);
                 case 1:
-                    return getString(R.string.title_section2).toUpperCase(l);
+                    return getString(R.string.title_about).toUpperCase(l);
                 case 2:
                     return getString(R.string.title_section3).toUpperCase(l);
             }
