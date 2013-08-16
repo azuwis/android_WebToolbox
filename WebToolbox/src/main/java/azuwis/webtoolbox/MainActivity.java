@@ -5,6 +5,8 @@ import java.util.Locale;
 import android.app.ActionBar;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
+import android.preference.Preference;
+import android.preference.PreferenceScreen;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
@@ -19,9 +21,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import azuwis.util.PreferenceListFragment;
 import azuwis.webtoolbox.fragments.AboutFragment;
+import azuwis.webtoolbox.fragments.SettingsFragment;
 
-public class MainActivity extends FragmentActivity implements ActionBar.TabListener {
+public class MainActivity extends FragmentActivity implements ActionBar.TabListener, PreferenceListFragment.OnPreferenceAttachedListener, Preference.OnPreferenceChangeListener, Preference.OnPreferenceClickListener {
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -100,6 +104,28 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
     public void onTabReselected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
     }
 
+    //setup your onPreferenceClickListener/onPreferenceChangeListener here
+    @Override
+    public void onPreferenceAttached(PreferenceScreen root, int xmlId){
+        if(root == null)
+            return; //for whatever reason in very rare cases this is null
+//        if(xmlId == R.xml.widget_settings){        //example id
+//            root.findPreference("somePreference").setOnPreferenceClickListener(this);
+//        }
+    }
+
+    //handle your preferenceChanged events here (if needed)
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        return true;
+    }
+
+    //handle your preferenceClick events here (if needed)
+    @Override
+    public boolean onPreferenceClick(Preference pref){
+        return true;
+    }
+
     /**
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
      * one of the sections/tabs/pages.
@@ -117,7 +143,8 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
             // below) with the page number as its lone argument.
             switch (position) {
                 case 0:
-                    break;
+                    Fragment settingsFragment = SettingsFragment.newInstance(R.xml.settings);
+                    return settingsFragment;
                 case 1:
                     Fragment aboutFragment = new AboutFragment();
                     return aboutFragment;
@@ -142,7 +169,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
             Locale l = Locale.getDefault();
             switch (position) {
                 case 0:
-                    return getString(R.string.title_section1).toUpperCase(l);
+                    return getString(R.string.title_settings).toUpperCase(l);
                 case 1:
                     return getString(R.string.title_about).toUpperCase(l);
                 case 2:

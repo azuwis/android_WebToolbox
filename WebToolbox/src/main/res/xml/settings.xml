@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="@string/enabled_component">
+
+        <CheckBoxPreference
+                android:key="youku_play_hd"
+                android:persistent="false"
+                android:title="@string/youku_play_hd"
+                android:summary="@string/youku_play_hd_summary" />
+        <CheckBoxPreference
+                android:key="youku_play"
+                android:persistent="false"
+                android:title="@string/youku_play"
+                android:summary="@string/youku_play_summary" />
+
+        <CheckBoxPreference
+                android:key="youku_download_hd"
+                android:persistent="false"
+                android:title="@string/youku_download_hd"
+                android:summary="@string/youku_download_hd_summary" />
+        <CheckBoxPreference
+                android:key="youku_download"
+                android:persistent="false"
+                android:title="@string/youku_download"
+                android:summary="@string/youku_download_summary" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
