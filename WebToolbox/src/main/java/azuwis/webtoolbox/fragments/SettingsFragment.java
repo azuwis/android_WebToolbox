@@ -35,17 +35,10 @@ public class SettingsFragment extends PreferenceListFragment {
 
         pm = getActivity().getPackageManager();
 
-        CheckBoxPreference youkuPlayHd = (CheckBoxPreference) findPreference("youku_play_hd");
-        setupComponentCheckbox(youkuPlayHd, "azuwis.webtoolbox.YoukuHdPlayActivity");
-
-        CheckBoxPreference youkuPlay = (CheckBoxPreference) findPreference("youku_play");
-        setupComponentCheckbox(youkuPlay, "azuwis.webtoolbox.YoukuMp4PlayActivity");
-
-        CheckBoxPreference youkuDownloadHd = (CheckBoxPreference) findPreference("youku_download_hd");
-        setupComponentCheckbox(youkuDownloadHd, "azuwis.webtoolbox.YoukuHdDownloadActivity");
-
-        CheckBoxPreference youkuDownload = (CheckBoxPreference) findPreference("youku_download");
-        setupComponentCheckbox(youkuDownload, "azuwis.webtoolbox.YoukuMp4DownloadActivity");
+        setupComponentCheckbox("youku_play_hd", "azuwis.webtoolbox.YoukuHdPlayActivity");
+        setupComponentCheckbox("youku_play", "azuwis.webtoolbox.YoukuMp4PlayActivity");
+        setupComponentCheckbox("youku_download_hd", "azuwis.webtoolbox.YoukuHdDownloadActivity");
+        setupComponentCheckbox("youku_download", "azuwis.webtoolbox.YoukuMp4DownloadActivity");
     }
 
     private void setEnabled(String name, boolean bool) {
@@ -60,7 +53,8 @@ public class SettingsFragment extends PreferenceListFragment {
         return (pm.getComponentEnabledSetting(componentName) != PackageManager.COMPONENT_ENABLED_STATE_DISABLED);
     }
 
-    private void setupComponentCheckbox(CheckBoxPreference pref, final String name) {
+    private void setupComponentCheckbox(String prefKey, final String name) {
+        CheckBoxPreference pref = (CheckBoxPreference) findPreference(prefKey);
         pref.setChecked(getEnabled(name));
         pref.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
             @Override
