@@ -40,7 +40,7 @@ public abstract class BaseDownloadActivity extends Activity {
         @Override
         protected void onPreExecute() {
             dialog = new ProgressDialog(BaseDownloadActivity.this);
-            dialog.setMessage("Working...");
+            dialog.setMessage(getString(R.string.working));
             dialog.show();
         }
 
