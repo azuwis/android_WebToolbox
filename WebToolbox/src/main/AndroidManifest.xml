@@ -25,6 +25,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Youku Play -->
         <activity
             android:name="azuwis.webtoolbox.YoukuHdPlayActivity"
             android:label="@string/title_activity_play_hd" >
@@ -33,9 +35,9 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
                 <data
+                    android:scheme="http"
                     android:host="v.youku.com"
-                    android:pathPrefix="/v_show/id_"
-                    android:scheme="http" />
+                    android:pathPrefix="/v_show/id_" />
             </intent-filter>
         </activity>
         <activity
@@ -46,35 +48,37 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
                 <data
+                    android:scheme="http"
                     android:host="v.youku.com"
-                    android:pathPrefix="/v_show/id_"
-                    android:scheme="http" />
+                    android:pathPrefix="/v_show/id_" />
             </intent-filter>
         </activity>
+
+        <!-- Youku Download -->
         <activity
-                android:name="azuwis.webtoolbox.YoukuHdDownloadActivity"
-                android:label="@string/title_activity_download_hd" >
+            android:name="azuwis.webtoolbox.YoukuHdDownloadActivity"
+            android:label="@string/title_activity_download_hd" >
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
                 <data
+                    android:scheme="http"
                     android:host="v.youku.com"
-                    android:pathPrefix="/v_show/id_"
-                    android:scheme="http" />
+                    android:pathPrefix="/v_show/id_" />
             </intent-filter>
         </activity>
         <activity
-                android:name="azuwis.webtoolbox.YoukuMp4DownloadActivity"
-                android:label="@string/title_activity_download" >
+            android:name="azuwis.webtoolbox.YoukuMp4DownloadActivity"
+            android:label="@string/title_activity_download" >
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
                 <data
-                        android:host="v.youku.com"
-                        android:pathPrefix="/v_show/id_"
-                        android:scheme="http" />
+                    android:scheme="http"
+                    android:host="v.youku.com"
+                    android:pathPrefix="/v_show/id_" />
             </intent-filter>
         </activity>
     </application>
