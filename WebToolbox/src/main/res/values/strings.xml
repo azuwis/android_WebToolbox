@@ -12,6 +12,7 @@
     <string name="error_getting_download_urls">Error getting downloadUrls, try again later</string>
     <string name="title_activity_download_hd">Download HD</string>
     <string name="title_activity_download">Download</string>
+    <string name="download_started">Download started</string>
     <string name="working">Working...</string>
     <string name="about_description">About WebToolbox</string>
 

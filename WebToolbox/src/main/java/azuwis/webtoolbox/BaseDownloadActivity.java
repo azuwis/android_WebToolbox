@@ -58,6 +58,8 @@ public abstract class BaseDownloadActivity extends Activity {
                     request.setTitle(String.format("%s #%03d", downloadInfo.get(0), i));
                     downloadManager.enqueue(request);
                 }
+                Toast toast = Toast.makeText(BaseDownloadActivity.this, R.string.download_started, Toast.LENGTH_SHORT);
+                toast.show();
             } else {
                 Toast toast = Toast.makeText(BaseDownloadActivity.this, R.string.error_getting_download_urls, Toast.LENGTH_SHORT);
                 toast.show();
