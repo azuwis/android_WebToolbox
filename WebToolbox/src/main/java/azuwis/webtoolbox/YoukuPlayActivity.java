@@ -7,7 +7,7 @@ public abstract class YoukuPlayActivity extends BasePlayActivity {
 
     @Override
     protected String getPlayUrl(String url) {
-        Pattern pattern = Pattern.compile(".*/id_([A-Za-z0-9]+)\\.html.*");
+        Pattern pattern = Pattern.compile(".*/id_([A-Za-z0-9]+).*");
         Matcher matcher = pattern.matcher(url);
         if (matcher.matches()) {
             return String.format("http://v.youku.com/player/getRealM3U8/vid/%s/type/%s/v.m3u8",
