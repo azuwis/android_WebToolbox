@@ -81,6 +81,41 @@
                     android:pathPrefix="/v_show/id_" />
             </intent-filter>
         </activity>
+
+        <!-- www.html5video.info -->
+        <activity
+            android:name="azuwis.webtoolbox.Html5VideoActivity"
+            android:label="@string/html5_video" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:scheme="http"
+                    android:host="v.youku.com"
+                    android:pathPrefix="/v_show/id_"/>
+                <data
+                    android:scheme="http"
+                    android:host="www.tudou.com"
+                    android:pathPrefix="/programs/view/" />
+                <data
+                    android:scheme="http"
+                    android:host="tv.sohu.com"
+                    android:pathPattern="/.*/n.*.shtml.*" />
+                <data
+                    android:scheme="http"
+                    android:host="m.tv.sohu.com"
+                    android:pathPattern="/.*/n.*.shtml.*" />
+                <data
+                    android:scheme="http"
+                    android:host="v.ku6.com"
+                    android:pathPattern="/show/" />
+                <data
+                    android:scheme="http"
+                    android:host="m.ku6.com"
+                    android:pathPattern="/show/" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

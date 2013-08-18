@@ -24,5 +24,7 @@
     <string name="youku_download_hd_summary">High quality</string>
     <string name="youku_download">Youku Download</string>
     <string name="youku_download_summary">Normal quality</string>
+    <string name="html5_video">HTML5 Video</string>
+    <string name="html5_video_summary">Play video using www.html5video.info</string>
 
 </resources>

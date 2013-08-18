@@ -39,6 +39,7 @@ public class SettingsFragment extends PreferenceListFragment {
         setupComponentCheckbox("youku_play", "azuwis.webtoolbox.YoukuMp4PlayActivity");
         setupComponentCheckbox("youku_download_hd", "azuwis.webtoolbox.YoukuHdDownloadActivity");
         setupComponentCheckbox("youku_download", "azuwis.webtoolbox.YoukuMp4DownloadActivity");
+        setupComponentCheckbox("html5_video", "azuwis.webtoolbox.Html5VideoActivity");
     }
 
     private void setEnabled(String name, boolean bool) {
