@@ -63,9 +63,9 @@ public abstract class YoukuDownloadActivity extends BaseDownloadActivity {
                 JSONObject part = vArray.getJSONObject(i);
                 String k = part.getString("k");
                 String k2 = part.getString("k2");
-                String u = "http://f.youku.com/player/getFlvPath/sid/00_" +
-                        String.format("%02d", i) + "/st/" + vPath + "/fileid/" +
-                        realFileid.substring(0, 8) + String.format("%02d", i) +
+                String u = "http://f.youku.com/player/getFlvPath/sid/" +
+                        System.currentTimeMillis() + "_" + String.format("%02d", i) +"/st/" +
+                        vPath + "/fileid/" + realFileid.substring(0, 8) + String.format("%02X", i) +
                         realFileid.substring(10) + "?K=" + k + ",k2:" + k2;
                 if (BuildConfig.DEBUG) Log.i(TAG, "url= "+u);
                 downloadInfo.add(u);
