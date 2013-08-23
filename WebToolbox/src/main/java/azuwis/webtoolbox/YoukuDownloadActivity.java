@@ -30,7 +30,6 @@ public abstract class YoukuDownloadActivity extends BaseDownloadActivity {
     // kanged from https://github.com/jovisayhehe/acfunm/blob/master/src/tv/avfun/api/ApiParser.java
     protected List<String> parseYoukuVideoItem(String vid, int parseMode){
         List<String> downloadInfo = new ArrayList<String>();
-        downloadInfo.add(vid);
         String url = "http://v.youku.com/player/getPlayList/VideoIDS/" + vid;
         try {
             JSONObject jsonObject = JsonReader.readJsonFromUrl(url);
@@ -38,6 +37,9 @@ public abstract class YoukuDownloadActivity extends BaseDownloadActivity {
             JSONObject data = jsonObject.getJSONArray("data").getJSONObject(0);
             Double seed = data.getDouble("seed");
             JSONObject fileids = data.getJSONObject("streamfileids");
+
+            String title = data.getString("title");
+            downloadInfo.add(title);
 
             String seg = null;
             String fids = null;
