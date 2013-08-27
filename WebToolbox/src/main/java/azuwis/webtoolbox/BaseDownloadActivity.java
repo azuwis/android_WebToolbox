@@ -12,6 +12,8 @@ import android.widget.Toast;
 import java.io.File;
 import java.util.List;
 
+// TODO control queue length manually using broadcast receiver
+
 public abstract class BaseDownloadActivity extends Activity {
 
     private static final String TAG = "BaseDownloadActivity";
