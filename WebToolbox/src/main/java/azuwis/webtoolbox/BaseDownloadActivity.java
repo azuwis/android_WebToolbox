@@ -49,7 +49,7 @@ public abstract class BaseDownloadActivity extends Activity {
             dialog.dismiss();
             if (downloadInfo.size() > 1) {
                 DownloadManager downloadManager = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
-                String path = Environment.DIRECTORY_MOVIES + "/" + downloadInfo.get(0);
+                String path = Environment.DIRECTORY_DOWNLOADS + "/" + downloadInfo.get(0);
                 new File(path).mkdirs();
                 for (int i = 1; i < downloadInfo.size(); i++) {
                     DownloadManager.Request request = new DownloadManager.Request(Uri.parse(downloadInfo.get(i)));
